@@ -1,0 +1,68 @@
+.addBook {
+    display: grid;
+    background: $light;
+    grid-template-columns: 60% 40%;
+    grid-gap: 2rem;
+    margin: 5rem auto;
+    padding: 1rem;
+    width: 70%;
+    height: 80vh;
+    color: $very-dark;
+    box-shadow: 10px 20px 20px rgba($color: $very-dark, $alpha: 0.7);
+    .addBook__Form {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+
+        h1 {
+            font-size: 1.5rem;
+        }
+
+        .error-message {
+            color: red;
+            font-style: italic;
+        }
+
+        .input-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+
+            label {
+                font-style: italic;
+            }
+
+            .field-input {
+                @extend .input;
+                width: 80%;
+                color: $very-dark;
+                font-weight: 700;
+                resize: none;
+            }
+
+            .textarea-input {
+                @extend .field-input;
+                height: auto;
+            }
+        }
+    }
+
+    .addBook__image {
+        display: flex;
+        align-items: center;
+
+        .fillInImage {
+            border: 2px dotted $dark;
+            width: 80%;
+            height: 80%;
+        }
+
+        img {
+            width: 80%;
+            height: 80%;
+            vertical-align: middle;
+        }
+    }
+}

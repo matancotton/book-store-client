@@ -1,0 +1,9 @@
+.home {
+    width: 80vw;
+    margin: 5rem auto;
+
+    @media (max-width: $mobile-size) {
+        margin: 0;
+        width: 100vw;
+    }
+}

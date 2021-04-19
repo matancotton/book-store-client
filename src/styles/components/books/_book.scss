@@ -1,0 +1,51 @@
+.book {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    transition: all 100ms ease-in;
+    opacity: 0.5;
+
+    img {
+        width: 100px;
+        height: 150px;
+    }
+
+    p {
+        font-size: 0.8rem;
+        line-height: 1;
+        line-break: auto;
+        color: $light;
+        span {
+            font-size: 0.8rem;
+            font-weight: 700;
+        }
+    }
+
+    .empty-photo {
+        width: 100px;
+        height: 150px;
+        background: $medium;
+        margin: auto;
+    }
+
+    &:hover {
+        opacity: 1;
+    }
+}
+
+@media (max-width: $mobile-size) {
+    .book {
+        opacity: 1;
+
+        img {
+            width: 150px;
+            height: 200px;
+        }
+
+        .empty-photo {
+            width: 150px;
+            height: 200px;
+        }
+    }
+}

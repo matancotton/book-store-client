@@ -1,0 +1,39 @@
+.filter-books {
+    width: 50vw;
+    background: $light;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    border: 1px solid $medium;
+    border-radius: 5px;
+    position: sticky;
+    top: 0.5rem;
+    z-index: 10;
+
+    input {
+        border: none;
+        outline: none;
+        font-size: 1.3rem;
+        width: 100%;
+        color: $very-dark;
+    }
+
+    .search-button {
+        margin-left: 0.5rem;
+        font-size: 1.5rem;
+        background: transparent;
+        border: none;
+        outline: none;
+        color: $dark;
+        cursor: pointer;
+    }
+}
+
+@media (max-width: $mobile-size) {
+    .filter-books {
+        position: static;
+        width: 80vw;
+        margin: 1rem auto;
+    }
+}

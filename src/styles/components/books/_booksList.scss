@@ -1,0 +1,30 @@
+.book-list__container {
+    margin: 0 auto;
+    display: flex;
+    position: relative;
+    align-items: center;
+    width: 70vw;
+}
+
+.book-list {
+    margin: 2rem auto;
+    display: grid;
+    width: 60vw;
+    height: 80vh;
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-columns: repeat(4, 1fr);
+}
+
+@media (max-width: $mobile-size) {
+    .book-list__container {
+        width: 60vw;
+        flex-direction: column;
+    }
+
+    .book-list {
+        width: 100%;
+        height: auto;
+        grid-template-rows: repeat(8, 1fr);
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
