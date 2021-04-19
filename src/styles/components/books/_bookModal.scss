@@ -41,6 +41,8 @@
             height: 100%;
             flex-direction: column;
             justify-content: space-evenly;
+            display: flex;
+            flex-direction: column;
 
             h1 {
                 color: $medium;
@@ -54,7 +56,6 @@
                 vertical-align: middle;
                 word-wrap: wrap;
                 padding-left: 0.5rem;
-                margin: 0;
             }
 
             .description {

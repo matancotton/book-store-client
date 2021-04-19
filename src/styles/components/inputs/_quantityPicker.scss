@@ -28,9 +28,11 @@
     text-align: center;
     cursor: pointer;
     vertical-align: middle;
+
     @media (max-width: $mobile-size) {
         height: 2rem;
         width: 2rem;
+        font-size: 1rem;
     }
 }
 .quantity-modifier:hover {
@@ -72,5 +74,6 @@
     @media (max-width: $mobile-size) {
         width: 3rem;
         font-size: 1rem;
+        vertical-align: middle;
     }
 }

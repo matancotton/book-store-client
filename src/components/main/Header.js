@@ -78,7 +78,7 @@ const Header = () => {
                         </div>
                     ) : (
                         <NavLink
-                            className="nav-link"
+                            className="nav-link login-icon"
                             activeClassName="active-link"
                             to="/login"
                         >
@@ -99,7 +99,7 @@ const Header = () => {
                             className="nav-link"
                             onMouseEnter={() => setIsCartVisible(true)}
                             onTouchStart={() => setIsCartVisible(true)}
-                            onTouchEnd={{ closeCart }}
+                            onTouchCancel={closeCart}
                         >
                             {cart}{" "}
                             <span className="cart-size">
