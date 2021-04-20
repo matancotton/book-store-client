@@ -5,6 +5,7 @@ import {
     faHome,
     faShoppingCart,
     faSignInAlt,
+    faSignOutAlt,
 } from "@fortawesome/free-solid-svg-icons";
 import { CartContext } from "../../context/CartContext";
 import Cart from "./Cart";
@@ -27,7 +28,12 @@ const Header = () => {
         <FontAwesomeIcon className={cartClassState} icon={faShoppingCart} />
     );
     const home = <FontAwesomeIcon className="header-icon" icon={faHome} />;
-    const loginIcon = <FontAwesomeIcon icon={faSignInAlt} />;
+    const loginIcon = (
+        <FontAwesomeIcon className="login-icon" icon={faSignInAlt} />
+    );
+    const logoutIcon = (
+        <FontAwesomeIcon className="login-icon" icon={faSignOutAlt} />
+    );
 
     const logoutClick = () => {
         if (!!adminState) {
@@ -38,7 +44,7 @@ const Header = () => {
             cartDispatch(emptyCart());
             deleteUserFromCookie();
         }
-        history.push("/");
+        history.push("/login");
     };
 
     const closeCart = () => {
@@ -74,15 +80,19 @@ const Header = () => {
                 <div className="links">
                     {!!loginState || !!adminState ? (
                         <div className="nav-link" onClick={logoutClick}>
-                            Log-out
+                            {logoutIcon}
+                            {document.documentElement.clientWidth > 800 &&
+                                " Log-out"}
                         </div>
                     ) : (
                         <NavLink
-                            className="nav-link login-icon"
+                            className="nav-link"
                             activeClassName="active-link"
                             to="/login"
                         >
                             {loginIcon}
+                            {document.documentElement.clientWidth > 800 &&
+                                " Log-in"}
                         </NavLink>
                     )}
 

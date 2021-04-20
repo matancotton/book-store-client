@@ -5,13 +5,13 @@ import { nanoid } from "nanoid";
 import { LoginContext } from "../../context/LoginContext";
 import { updateCartInDb } from "../../server/db";
 import GeneralModal from "./GeneralModal";
+import QuantityPicker from "../inputs/QuantityPicker";
 const Cart = () => {
     const { cartState, cartDispatch } = useContext(CartContext);
     const { loginState } = useContext(LoginContext);
     const [totalPrice, setTotalPrice] = useState(0);
     const [booksToShow, setBooksToShow] = useState([]);
     const [numOfBooks, setNumOfBooks] = useState([]);
-    const [images, setImages] = useState([]);
     const [isModalVisible, setIsModalVisible] = useState(false);
 
     const emptyCartClick = () => {
@@ -30,19 +30,22 @@ const Cart = () => {
     const setVisibleBooks = () => {
         const multipleBooks = [];
         const multipleCount = [];
-        const booksImages = [];
         cartState.forEach((book) => {
-            if (multipleBooks.includes(book.title)) {
-                multipleCount[multipleBooks.indexOf(book.title)]++;
-            } else {
-                multipleBooks.push(book.title);
+            let foundBook = false;
+            multipleBooks.forEach((multipleBook, index) => {
+                if (multipleBook.title === book.title) {
+                    multipleCount[index]++;
+                    foundBook = true;
+                }
+            });
+
+            if (!foundBook) {
+                multipleBooks.push(book);
                 multipleCount.push(1);
-                booksImages.push(book.picture);
             }
         });
         setBooksToShow(multipleBooks);
         setNumOfBooks(multipleCount);
-        setImages(booksImages);
     };
 
     const onBuyClicked = () => {
@@ -70,14 +73,16 @@ const Cart = () => {
                                 className="shopping-cart__items__item"
                             >
                                 <div>
-                                    <img src={images[index]} alt={book} />
-                                    <p>{book}</p>
+                                    <img src={book.picture} alt={book} />
+                                    <p>{book.title}</p>
                                 </div>
-                                {numOfBooks[index] > 1 && (
-                                    <div className="books-counter">
-                                        X {numOfBooks[index]}
-                                    </div>
-                                )}
+                                <QuantityPicker
+                                    min={0}
+                                    max={99}
+                                    val={numOfBooks[index]}
+                                    cartDispatch={cartDispatch}
+                                    book={book}
+                                />
                             </div>
                         ))}
                     </div>

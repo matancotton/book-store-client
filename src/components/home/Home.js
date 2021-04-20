@@ -13,7 +13,6 @@ const Home = () => {
         setIsLoaderVisible(true);
         getBooks()
             .then((result) => {
-                console.log(result);
                 setBooks(result.books);
                 setBooksLength(result.length);
                 setIsLoaderVisible(false);

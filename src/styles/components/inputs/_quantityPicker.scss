@@ -4,6 +4,12 @@
     border-radius: 3px;
     vertical-align: middle;
     width: fit-content;
+    margin: auto;
+    height: 3rem;
+
+    @media (max-width: $mobile-size) {
+        height: 2rem;
+    }
 }
 .quantity-input:focus {
     background: red;

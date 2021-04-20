@@ -2,8 +2,11 @@
     width: 80vw;
     margin: 5rem auto;
 
+    @media (max-width: $tablet-size) {
+        width: 100vw;
+    }
+
     @media (max-width: $mobile-size) {
         margin: 0;
-        width: 100vw;
     }
 }

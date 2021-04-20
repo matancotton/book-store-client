@@ -30,10 +30,11 @@
     }
 }
 
-@media (max-width: $mobile-size) {
+@media (max-width: $tablet-size) {
     .filter-books {
         position: static;
         width: 80vw;
         margin: 1rem auto;
+        z-index: 0;
     }
 }

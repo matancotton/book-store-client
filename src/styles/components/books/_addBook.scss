@@ -66,3 +66,36 @@
         }
     }
 }
+
+@media (max-width: $mobile-size) {
+    .addBook {
+        grid-template-columns: 100%;
+        grid-template-rows: 60% 40%;
+
+        .addBook__Form {
+            h1 {
+                font-size: 1rem;
+            }
+
+            .input-container {
+                .field-input {
+                    padding: 0.5rem 0.2rem;
+                }
+
+                .textarea-input {
+                    min-height: 4rem;
+                    overflow: auto;
+                }
+            }
+        }
+        .addBook__image {
+            width: 100%;
+            align-items: flex-start;
+            justify-content: center;
+
+            .fillInImage {
+                width: 50%;
+            }
+        }
+    }
+}

@@ -35,7 +35,7 @@ const BooksList = ({
             setBookToDisplay(undefined);
             setIsLoaderVisible(false);
             setIsGeneralModalVisible(true);
-            setGeneralModalMessage(`The Book: ${book.title} was updated!`);
+            setGeneralModalMessage(`The Book: "${book.title}" was updated!`);
             getBooks().then((result) => {
                 setBooks(result.books);
             });
@@ -48,7 +48,7 @@ const BooksList = ({
             setBookToDisplay(undefined);
             setIsLoaderVisible(false);
             setIsGeneralModalVisible(true);
-            setGeneralModalMessage(`The Book: ${book.title} was deleted!`);
+            setGeneralModalMessage(`The Book: "${book.title}" was deleted!`);
             getBooks().then((result) => {
                 setBooks(result.books);
                 setBooksLength(result.length);

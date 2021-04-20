@@ -26,6 +26,14 @@
     background: none;
 }
 
+@media (max-width: $tablet-size) {
+    .book-list__arrow {
+        opacity: 1;
+        box-shadow: 0 0 5px 5px rgba($color: #000000, $alpha: 1);
+        background: rgba($color: $very-dark, $alpha: 0.5);
+    }
+}
+
 @media (max-width: $mobile-size) {
     .book-list__arrow {
         opacity: 1;

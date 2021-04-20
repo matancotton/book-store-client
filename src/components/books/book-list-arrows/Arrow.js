@@ -20,7 +20,7 @@ const Arrow = ({
         setIsLoaderVisible(true);
         getFilterdBooks(filterValue)
             .then((result) => {
-                if (document.documentElement.clientWidth <= 800)
+                if (document.documentElement.clientWidth <= 640)
                     setBooks(books.concat(result.books));
                 else setBooks(result.books);
                 setCounter(counter);

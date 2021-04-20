@@ -34,10 +34,14 @@
     }
 }
 
-@media (max-width: $mobile-size) {
+@media (max-width: $tablet-size) {
     .book {
         opacity: 1;
+    }
+}
 
+@media (max-width: $mobile-size) {
+    .book {
         img {
             width: 150px;
             height: 200px;

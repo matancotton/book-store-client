@@ -1,4 +1,9 @@
 .login-page {
     margin-top: 5rem;
     height: calc(100vh - 5rem);
+
+    @media (max-width: $mobile-size) {
+        margin: auto;
+        height: 100vh;
+    }
 }

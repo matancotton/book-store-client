@@ -56,8 +56,15 @@
     animation: wobble-hor-bottom 0.8s both;
 }
 
+@media (max-width: $tablet-size) {
+    .header {
+        background: #414141;
+    }
+}
+
 @media (max-width: $mobile-size) {
     .header {
+        background: transparent;
         width: 20vw;
         height: 40vh;
         top: 0;
@@ -76,7 +83,7 @@
 
         .cart-size {
             display: block;
-            text-align: center;
+            margin: 2vw 1vw;
         }
     }
 

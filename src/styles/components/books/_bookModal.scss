@@ -110,6 +110,19 @@
     transition: opacity 200ms ease-out;
 }
 
+@media (max-width: $tablet-size) {
+    .book-modal-container {
+        .book-modal {
+            max-width: 90vw;
+
+            .image-container {
+                height: 50%;
+                margin: auto;
+            }
+        }
+    }
+}
+
 @media (max-width: $mobile-size) {
     .book-modal-container {
         .book-modal {
@@ -120,7 +133,7 @@
             grid-template-columns: 100%;
             grid-template-rows: 40% 60%;
             grid-gap: 0.2rem;
-            padding: 0.2rem;
+            padding: 0.5rem;
 
             .close-button {
                 width: 1rem;
@@ -129,7 +142,8 @@
 
             .image-container {
                 display: block;
-                width: 80%;
+                width: 60%;
+                height: 100%;
                 margin: 0 auto;
             }
 

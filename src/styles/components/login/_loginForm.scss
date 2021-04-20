@@ -50,3 +50,10 @@
         border-bottom: 2px solid $light;
     }
 }
+
+@media (max-width: $mobile-size) {
+    .login-form {
+        width: 60vw;
+        border: none;
+    }
+}
