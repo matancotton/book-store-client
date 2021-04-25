@@ -1,7 +1,6 @@
-import React, { useState } from "react";
+import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { getFilterdBooks } from "../../../server/db";
-import SmallLoader from "../../loaders/SmallLoader";
 
 const Arrow = ({
     books,

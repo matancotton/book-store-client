@@ -19,13 +19,6 @@
     }
 }
 
-.disabled:hover {
-    cursor: default;
-    opacity: 0.5;
-    box-shadow: none;
-    background: none;
-}
-
 @media (max-width: $tablet-size) {
     .book-list__arrow {
         opacity: 1;
@@ -48,4 +41,12 @@
     .disabled {
         display: none;
     }
+}
+
+.disabled,
+.disabled:hover {
+    cursor: default;
+    opacity: 0.5;
+    box-shadow: none;
+    background: none;
 }

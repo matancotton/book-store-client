@@ -16,6 +16,7 @@ import { emptyCart } from "../../actions/cartAction";
 import { AdminContext } from "../../context/AdminContext";
 import { adminLogoutAction } from "../../actions/adminAction";
 import { deleteadminFromCookie } from "../../cookie/adminCookie";
+import { updateCartInDb } from "../../server/db";
 
 const Header = () => {
     const { loginState, loginDispatch } = useContext(LoginContext);
@@ -55,6 +56,9 @@ const Header = () => {
         setTimeout(() => {
             setIsCartVisible(false);
         }, 400);
+        if (!!loginState) {
+            updateCartInDb(cartState, loginState).then(() => {});
+        }
     };
 
     useEffect(() => {

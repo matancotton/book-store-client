@@ -67,25 +67,33 @@ const BooksList = ({
                 searchKey={searchKey}
                 setIsLoaderVisible={setIsLoaderVisible}
             />
-            <div className="book-list">
-                {books.map((book) => (
-                    <Book
-                        key={book._id}
-                        book={book}
-                        setBookToDisplay={setBookToDisplay}
-                    />
-                ))}
 
-                {bookToDisplay && (
-                    <BookModal
-                        book={bookToDisplay}
-                        setBookToDisplay={setBookToDisplay}
-                        setBooks={setBooks}
-                        editButtonOnClick={editButtonOnClick}
-                        onDeleteClick={onDeleteClick}
-                    />
-                )}
-            </div>
+            {books.length > 0 ? (
+                <div className="book-list">
+                    {books.map((book) => (
+                        <Book
+                            key={book._id}
+                            book={book}
+                            setBookToDisplay={setBookToDisplay}
+                        />
+                    ))}
+
+                    {bookToDisplay && (
+                        <BookModal
+                            book={bookToDisplay}
+                            setBookToDisplay={setBookToDisplay}
+                            setBooks={setBooks}
+                            editButtonOnClick={editButtonOnClick}
+                            onDeleteClick={onDeleteClick}
+                        />
+                    )}
+                </div>
+            ) : (
+                <div className="book-list">
+                    <h1>No Results...</h1>
+                </div>
+            )}
+
             <Arrow
                 books={books}
                 faChevron={faChevronRight}

@@ -5,14 +5,8 @@ import { CartContext } from "../../context/CartContext";
 import { addBooks } from "../../actions/cartAction";
 import QuantityPicker from "../inputs/QuantityPicker";
 import { LoginContext } from "../../context/LoginContext";
-import {
-    deleteBookInDB,
-    editBookInDB,
-    getBooks,
-    updateCartInDb,
-} from "../../server/db";
+import { updateCartInDb } from "../../server/db";
 import { AdminContext } from "../../context/AdminContext";
-import GeneralModal from "../main/GeneralModal";
 
 const BookModal = ({
     book,

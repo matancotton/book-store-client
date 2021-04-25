@@ -14,7 +14,6 @@ const cartReducer = (state, action) => {
             const stateCopy = [...state];
             for (const [index, book] of stateCopy.entries()) {
                 if (book.title === action.book.title) {
-                    console.log(book.title);
                     stateCopy.splice(index, 1);
                     return stateCopy;
                 }
